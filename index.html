@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deepak Wadhwa | Stock Market Insights</title>
-  <!-- Meta Pixel Code -->
+
+  <!-- ===== META PIXEL (ID: 3400530750155536) ===== -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -14,13 +15,14 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1054809507547931');
+    fbq('init', '3400530750155536');
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1054809507547931&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=3400530750155536&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+
   <style>
     * {
       margin: 0;
@@ -237,7 +239,7 @@
     <!-- BLINKING NAME exactly as requested -->
     <div class="blink-name">DEEPAK WADHWA</div>
 
-    <div class="tagline">📈 Stock Market Channel</div>
+    <div class="tagline">📈 Stock Market Learning & Insights</div>
 
     <!-- Telegram join button -->
     <a 
@@ -260,19 +262,84 @@
 
     <!-- small disclaimer to avoid ad rejection (no guarantees, no false claims) -->
     <div class="legal-note">
-      *This is an educational stock market channel. No financial advice.
+      *This is an educational stock market learning channel. No financial advice is provided.
     </div>
   </div>
 
   <script>
-    // Ensure meta pixel already loaded; no additional tracking needed,
-    // but we can track a click event for Telegram join (optional, safe)
+    // ============================================================
+    // PIXEL ID: 3400530750155536
+    // CHANNEL: DEEPAK WADHWA
+    // TELEGRAM: https://t.me/+zv2O7CXqJ1RlYTc1
+    // Policy-safe click tracking only (no misleading claims)
+    // ============================================================
     (function() {
       const joinBtn = document.getElementById('telegramJoinBtn');
-      if (joinBtn && typeof fbq !== 'undefined') {
-        joinBtn.addEventListener('click', function() {
-          fbq('track', 'Lead'); // standard event, compliant
+      if (!joinBtn) return;
+
+      let isProcessing = false;
+
+      joinBtn.addEventListener('click', function(e) {
+        if (isProcessing) {
+          e.preventDefault();
+          return;
+        }
+        isProcessing = true;
+
+        // Fire safe, policy-compliant tracking events
+        if (typeof fbq === 'function') {
+          try {
+            // Standard event - Lead (intent to join)
+            fbq('track', 'Lead', {
+              content_name: 'Deepak_Wadhwa_Telegram_Join',
+              content_category: 'Stock_Market_Education',
+              button_location: 'main_cta',
+              page: 'deepak_wadhwa_landing',
+              pixel_id: '3400530750155536'
+            });
+
+            // Standard event - Contact (clicking to connect)
+            fbq('track', 'Contact', {
+              contact_method: 'Telegram_Channel',
+              content_name: 'Deepak_Wadhwa_Channel',
+              pixel_id: '3400530750155536'
+            });
+
+            // Custom event - safe, descriptive only
+            fbq('trackCustom', 'TelegramJoinClick', {
+              channel_name: 'Deepak_Wadhwa',
+              button_id: 'telegramJoinBtn',
+              button_text: 'JOIN CHANNEL',
+              destination: 'telegram',
+              device_type: /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+              page_section: 'main_cta',
+              pixel_id: '3400530750155536'
+            });
+
+            console.log('[Pixel 3400530750155536] ✅ Safe events fired: Lead, Contact, TelegramJoinClick');
+          } catch (err) {
+            console.warn('Pixel event error:', err);
+          }
+        } else {
+          console.warn('Facebook Pixel not loaded (fbq not available).');
+        }
+
+        // Let the default anchor behavior open the Telegram link in a new tab.
+        // We do NOT call preventDefault() here, so the browser handles the navigation normally.
+        // Release the lock after a short delay to allow future clicks.
+        setTimeout(function() {
+          isProcessing = false;
+        }, 800);
+      });
+
+      // Page-level engagement tracking (safe, no financial claims)
+      if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent', {
+          content_name: 'Deepak_Wadhwa_Landing_Page',
+          content_category: 'Educational_Stock_Market',
+          pixel_id: '3400530750155536'
         });
+        console.log('[Pixel 3400530750155536] ✅ ViewContent tracked.');
       }
     })();
   </script>
