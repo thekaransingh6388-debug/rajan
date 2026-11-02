@@ -33,7 +33,7 @@
         }
 
         body {
-            background-color: #f0f4ff; /* Light bluish background */
+            background-color: #f0f4ff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -66,12 +66,11 @@
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #8b5cf6; /* Purple border */
+            border: 3px solid #8b5cf6;
             padding: 2px;
             position: relative;
         }
 
-        /* Green Online Dot */
         .online-dot {
             position: absolute;
             bottom: 5px;
@@ -100,13 +99,13 @@
         }
 
         .verified-icon {
-            color: #0ea5e9; /* Blue tick */
+            color: #0ea5e9;
             font-size: 18px;
         }
 
         .official-tag {
             display: inline-block;
-            background-color: #a855f7; /* Purple tag */
+            background-color: #a855f7;
             color: white;
             font-size: 11px;
             font-weight: 700;
@@ -125,12 +124,12 @@
         /* Text Content */
         .text-content {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .text-content h3 {
             font-size: 16px;
-            color: #7c3aed; /* Purple text */
+            color: #7c3aed;
             font-weight: 600;
             margin-bottom: 5px;
         }
@@ -142,47 +141,68 @@
             line-height: 1.2;
         }
 
-        /* Blinking Button */
+        /* ===== DARK BLUE BUTTONS ===== */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
         .join-btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             width: 100%;
-            background: linear-gradient(135deg, #a855f7, #8b5cf6);
+            background: linear-gradient(135deg, #1e3a8a, #1e40af); /* Dark Blue Gradient */
             color: white;
             text-align: center;
             padding: 16px;
             border-radius: 12px;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
-            margin-bottom: 12px;
-            transition: transform 0.2s;
-            
-            /* Blinking Animation */
-            animation: pulse-blink 1.2s infinite;
-        }
-
-        @keyframes pulse-blink {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.02); }
-            100% { opacity: 1; transform: scale(1); }
+            box-shadow: 0 8px 15px rgba(30, 58, 138, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.3px;
         }
 
         .join-btn:hover {
-            animation: none; /* Stop blinking on hover */
-            transform: scale(1.02);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 22px rgba(30, 58, 138, 0.5);
         }
 
-        .join-btn span {
-            margin-right: 8px;
-            font-size: 20px;
+        .join-btn:active {
+            transform: scale(0.98);
         }
 
+        .join-btn .btn-icon {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        /* First button — blinking */
+        .join-btn.blink {
+            animation: pulse-blink 1.4s infinite;
+        }
+
+        @keyframes pulse-blink {
+            0%   { opacity: 1;   transform: scale(1); }
+            50%  { opacity: 0.85; transform: scale(1.015); }
+            100% { opacity: 1;   transform: scale(1); }
+        }
+
+        .join-btn.blink:hover {
+            animation: none;
+        }
+
+        /* Sub-text */
         .sub-text {
             text-align: center;
             color: #64748b;
             font-size: 13px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         /* Channel Preview Box */
@@ -207,7 +227,7 @@
         }
 
         .preview-item {
-            background-color: #ede9fe; /* Light purple bg */
+            background-color: #ede9fe;
             padding: 12px 15px;
             border-radius: 10px;
             margin-bottom: 10px;
@@ -215,7 +235,7 @@
             color: #334155;
             line-height: 1.4;
         }
-        
+
         .preview-item:last-child {
             margin-bottom: 0;
         }
@@ -237,7 +257,6 @@
         <!-- Profile Section -->
         <div class="profile-section">
             <div style="position: relative;">
-                <!-- Aapka Diya Hua Logo Yahan Add Kar Diya Gaya Hai -->
                 <img src="https://karanmetalabe.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-10-14-at-12.14.49_fd910fb7.jpg" alt="Deepak Wadhwa" class="profile-pic">
                 <div class="online-dot"></div>
             </div>
@@ -257,10 +276,20 @@
             <h1>शेयर बाज़ार सीखें — आसान भाषा में</h1>
         </div>
 
-        <!-- Join Button -->
-        <a href="https://t.me/+nWBOUhA0jLI3NTA9" target="_blank" class="join-btn">
-            <span>✈️</span> JOIN FREE TELGRAM CHANNEL
-        </a>
+        <!-- ===== TWO DARK BLUE BUTTONS ===== -->
+        <div class="btn-group">
+            <!-- Button 1: Main Channel -->
+            <a href="https://t.me/+nWBOUhA0jLI3NTA9" target="_blank" class="join-btn blink">
+                <span class="btn-icon">✈️</span>
+                JOIN FREE TELEGRAM CHANNEL
+            </a>
+
+            <!-- Button 2: Backup / Private Group (replace link as needed) -->
+            <a href="https://t.me/+nWBOUhA0jLI3NTA9" target="_blank" class="join-btn">
+                <span class="btn-icon">📢</span>
+                JOIN BACKUP CHANNEL
+            </a>
+        </div>
 
         <div class="sub-text">
             👆 One tap to join • एक टैप में जॉइन करें
